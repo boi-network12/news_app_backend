@@ -14,7 +14,7 @@ const app = express();
 connectDB();
 
 app.use(cors({
-    origin: "*",
+    origin: ["*", "https://news-web-wine.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));

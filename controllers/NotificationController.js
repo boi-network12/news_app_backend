@@ -13,7 +13,6 @@ exports.createNotification = async (userId, title, message, image = null, url = 
         });
 
         await newNotification.save();
-        console.log("Notification created", title)
     } catch (error) {
         console.error("Notification Error:", error.message);
     }
