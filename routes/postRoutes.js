@@ -1,9 +1,11 @@
 const express = require('express');
 const authMiddleware = require('../middleware/authMiddleware');
 const { createPost, getAllPosts, updatePost, deletePost, getPostById, likePost, dislikePost } = require('../controllers/PostController');
-const upload = require('../config/cloudinary');
+const multer = require("multer");
 
 const router = express.Router();
+
+const upload = multer({ dest: "uploads/" });
 
 // Create a new post (protected route)
 router.post('/', authMiddleware, upload.single('image'), createPost);
