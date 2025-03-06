@@ -5,6 +5,7 @@ const connectDB = require('./config/db.js');
 const authRoutes = require("./routes/userRoutes.js")
 const notificationRoutes = require("./routes/NotificationRoutes.js")
 const postRoutes = require("./routes/postRoutes.js")
+const newsRoutes = require("./routes/NewsRoute.js")
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use('/auth', authRoutes)
 app.use('/', notificationRoutes)
 app.use('/posts', postRoutes);
+app.use("/api/news", newsRoutes);
 
 
 const PORT = process.env.PORT || 5000;
