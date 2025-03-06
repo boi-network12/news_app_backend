@@ -12,7 +12,6 @@ const limiter = rateLimit({
 });
 
 
-
 router.get("/", limiter, async (req, res) => {
     try {
         const posts = await Post.find()
