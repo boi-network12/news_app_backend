@@ -15,7 +15,7 @@ const limiter = rateLimit({
 router.get("/", limiter, async (req, res) => {
     try {
         const posts = await Post.find()
-        .select("title content category country createdAt likeCount")
+        .select("title content image category country createdAt likeCount")
         .sort({ createdAt : -1 })
         .limit(10)
 
