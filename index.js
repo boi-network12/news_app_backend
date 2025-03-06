@@ -14,15 +14,9 @@ const app = express();
 
 connectDB();
 
-app.use(cors({
-    origin: [
-        "*", 
-        "https://news-web-wine.vercel.app",
-        "http://localhost:3000"
-        ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-}));
+const cors = require('cors');
+app.use(cors()); // Allow all origins
+
 app.use(express.json());
 
 // routes (example)
