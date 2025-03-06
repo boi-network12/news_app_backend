@@ -14,7 +14,7 @@ const app = express();
 
 connectDB();
 
-const cors = require('cors');
+
 app.use(cors()); // Allow all origins
 
 app.use(express.json());
